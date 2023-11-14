@@ -10,6 +10,7 @@ class LaundryApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Laundry App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
