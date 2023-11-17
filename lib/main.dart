@@ -42,7 +42,7 @@ class LaundryHomePage extends StatelessWidget {
             Text(
               'Laundry Modern Untuk Hidup Urban Anda',
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(
                     255, 221, 121, 252), // Ubah warna teks menjadi ungu
@@ -67,7 +67,7 @@ class LaundryHomePage extends StatelessWidget {
                       255, 176, 62, 217), // Warna latar belakang tombol
                   onPrimary: Colors.white, // Warna teks pada tombol
                   padding: EdgeInsets.symmetric(
-                      horizontal: 30, vertical: 15), // Padding tombol
+                      horizontal: 30, vertical: 14), // Padding tombol
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),

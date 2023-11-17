@@ -18,7 +18,7 @@ class _LayananPageState extends State<LayananPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize:
-              Size.fromHeight(248.0), // Sesuaikan tinggi vertikal di sini
+              Size.fromHeight(212.0), // Sesuaikan tinggi vertikal di sini
           child: AppBar(
             backgroundColor: Colors.grey,
             elevation: 0,
@@ -51,8 +51,7 @@ class _LayananPageState extends State<LayananPage> {
             ),
             bottom: TabBar(
               labelColor: Colors.white, // Atur warna teks tab yang dipilih
-              unselectedLabelColor:
-                  const Color.fromARGB(255, 255, 255, 255).withOpacity(1),
+              unselectedLabelColor: Color.fromARGB(255, 0, 0, 0).withOpacity(1),
               tabs: [
                 Tab(text: 'Tentang'),
                 Tab(text: 'Pelayanan'),

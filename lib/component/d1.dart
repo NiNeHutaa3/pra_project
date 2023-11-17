@@ -13,14 +13,14 @@ class LayananComponent extends StatelessWidget {
             child: Text(
               'Layanan',
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 16.0,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromARGB(255, 98, 97, 97),
               ),
             ),
           ),
         ),
-        SizedBox(height: 16.0),
+        SizedBox(height: 7.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -64,7 +64,6 @@ class LayananComponent extends StatelessWidget {
             label,
             style: const TextStyle(
               fontSize: 15.0,
-              fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 98, 97, 97),
             ),
           ),

@@ -12,16 +12,16 @@ class DiskonComponent extends StatelessWidget {
             child: Text(
               'Paket Khusus',
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 16.0,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromARGB(255, 98, 97, 97),
               ),
             ),
           ),
         ),
-        const SizedBox(height: 16.0),
+        const SizedBox(height: 7.0),
         Container(
-          height: 120.0, // Set tinggi container sesuai kebutuhan Anda
+          height: 140.0, // Set tinggi container sesuai kebutuhan Anda
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [

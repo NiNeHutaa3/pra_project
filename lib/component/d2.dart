@@ -12,14 +12,14 @@ class PenawaranComponent extends StatelessWidget {
             child: Text(
               'Penawaran',
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 16.0,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromARGB(255, 98, 97, 97),
               ),
             ),
           ),
         ),
-        SizedBox(height: 16.0),
+        SizedBox(height: 7.0),
         SizedBox(
           height: 200.0,
           child: ListView(

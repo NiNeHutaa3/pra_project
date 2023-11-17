@@ -27,9 +27,14 @@ class SelesaiPage extends StatelessWidget {
                 children: [
                   Text(
                     'Nama Pelanggan',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Text('John Doe'),
+                  Text(
+                    'John Doe',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -39,9 +44,14 @@ class SelesaiPage extends StatelessWidget {
                 children: [
                   Text(
                     'Nomor Pemesanan',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Text('12345'),
+                  Text(
+                    '12345',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -51,9 +61,14 @@ class SelesaiPage extends StatelessWidget {
                 children: [
                   Text(
                     'Jumlah Pembayaran',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Text('\50.000'),
+                  Text(
+                    '\50.000',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -62,10 +77,15 @@ class SelesaiPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Tanggal & Waktu Pengembalian',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    'Waktu Pengembalian',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Text('2023-10-16 14:00'),
+                  Text(
+                    '16-10-2023 16.00',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -75,9 +95,14 @@ class SelesaiPage extends StatelessWidget {
                 children: [
                   Text(
                     'Metode Pembayaran',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Text('Kartu Kredit'),
+                  Text(
+                    'Kartu Kredit',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),

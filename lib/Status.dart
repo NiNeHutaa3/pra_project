@@ -5,21 +5,35 @@ class StatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Status'),
+        title: Text(
+          'Status',
+          style: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255), // Warna teks Status
+          ),
+        ), // Judul "Status"// Menempatkan teks judul di tengah
+        backgroundColor:
+            Color.fromARGB(255, 191, 0, 255), // Warna latar belakang AppBar
+        elevation: 0, // Menghilangkan efek shadow
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(5.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('No. Pemesanan: 12345'),
-                Text('Total Harga: \90.000'),
+                Text('No. Pemesanan: 12345',
+                    style: TextStyle(
+                      fontSize: 15,
+                    )),
+                Text('Total Harga: \90.000',
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 18),
             Text(
               'Status Pemesanan',
               style: TextStyle(
@@ -96,7 +110,6 @@ class StatusItem extends StatelessWidget {
           width: 60,
           height: 60,
         ),
-        SizedBox(width: 16),
         Divider(
           // Tambahkan Divider di sini
           color: Colors.black, // Atur warna garis sesuai kebutuhan

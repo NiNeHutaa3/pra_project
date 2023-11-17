@@ -85,14 +85,52 @@ class ProfileTab extends StatelessWidget {
               // Tambahkan aksi yang ingin Anda lakukan ketika menu alamat ditekan
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.phone), // Icon alamat
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('No Telepon'), // Teks menu alamat
+                InkWell(
+                  onTap: () {
+                    // Tambahkan aksi yang ingin Anda lakukan ketika ikon edit ditekan
+                  },
+                  child: const Icon(Icons.edit), // Ikon edit
+                ),
+              ],
+            ),
+            subtitle:
+                const Text('082169727'), // Ganti dengan alamat pengguna Anda
+            onTap: () {
+              // Tambahkan aksi yang ingin Anda lakukan ketika menu alamat ditekan
+            },
+          ),
 
           ListTile(
             leading: const Icon(Icons.feedback), // Icon umpan balik
             title: const Text('Umpan Balik'), // Teks menu umpan balik
-            onTap: () {
-              _showFeedbackDialog(context);
-            },
+            trailing: PopupMenuButton<String>(
+              icon: const Icon(Icons.arrow_drop_down), // Icon dropdown
+              onSelected: (String value) {
+                if (value == 'kirim') {
+                  _showFeedbackDialog(context);
+                } else if (value == 'lihat') {
+                  _showFeedbackList(context);
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: 'kirim',
+                  child: Text('Ajukan Umpan Balik'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'lihat',
+                  child: Text('Lihat Pengajuan'),
+                ),
+              ],
+            ),
           ),
+
           ListTile(
             leading: const Icon(Icons.shopping_bag), // Icon history belanja
             title: const Text('History Pesanan'), // Teks menu history belanja
@@ -126,7 +164,7 @@ void _showFeedbackDialog(BuildContext context) {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const Text('Tulis Saran dan kritik Anda'),
+            const Text('Tulis Saran dan Kritik Anda'),
             TextField(
               onChanged: (text) {
                 feedbackText = text;
@@ -144,6 +182,33 @@ void _showFeedbackDialog(BuildContext context) {
               Navigator.of(context).pop(); // Tutup dialog
             },
             child: const Text('Kirim'),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void _showFeedbackList(BuildContext context) {
+  // Implementasi tampilan daftar pengajuan umpan balik di sini
+  // Anda dapat menggunakan ListView atau widget lain sesuai kebutuhan aplikasi Anda
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const Text('Daftar Pengajuan Umpan Balik'),
+            // Tampilkan daftar pengajuan umpan balik di sini
+          ],
+        ),
+        actions: <Widget>[
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Tutup dialog
+            },
+            child: const Text('Tutup'),
           ),
         ],
       );

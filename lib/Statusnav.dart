@@ -54,7 +54,7 @@ class _StatusTabState extends State<StatusTab> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: _selectedTabIndex == index
-                              ? Colors.blue
+                              ? Color.fromARGB(255, 209, 131, 255)
                               : Colors.grey,
                         ),
                         child: Icon(

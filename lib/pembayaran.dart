@@ -32,7 +32,7 @@ class PembayaranPage extends StatelessWidget {
                     child: Text(
                       'Subtotal: \100.000',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 17,
                       ),
                     ),
                   ),
@@ -43,13 +43,12 @@ class PembayaranPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: const Color.fromARGB(255, 202, 120, 246),
-                      width: 1.0,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                   ),
-                  margin: const EdgeInsets.all(10.0),
+                  margin: const EdgeInsets.all(1.0),
                   child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: DropdownButton<String>(
                       items: <String>[
                         'Voucher 1',
@@ -64,7 +63,7 @@ class PembayaranPage extends StatelessWidget {
                       onChanged: (String) {
                         // Implementasi perubahan nilai dropdown di sini
                       },
-                      hint: const Text('Klaim Voucher'),
+                      hint: const Text('Voucher'),
                     ),
                   ),
                 ),
@@ -82,9 +81,9 @@ class PembayaranPage extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text(
-                      'Total Harga: \50.000',
+                      'Harga: 50.000',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 17,
                       ),
                     ),
                   ),
@@ -92,6 +91,7 @@ class PembayaranPage extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 12),
           const Text(
             'Metode Pembayaran:',
             style: TextStyle(
