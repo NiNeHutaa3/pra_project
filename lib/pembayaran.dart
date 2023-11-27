@@ -1,138 +1,120 @@
 import 'package:flutter/material.dart';
 
-class PembayaranPage extends StatelessWidget {
-  final bool cashViaCourier;
-  final bool transferBank;
+class PembayaranPage extends StatefulWidget {
+  @override
+  _PembayaranPageState createState() => _PembayaranPageState();
+}
 
-  PembayaranPage({
-    required this.cashViaCourier,
-    required this.transferBank,
-  });
+class _PembayaranPageState extends State<PembayaranPage> {
+  bool isPaymentMethod1Selected = false;
+  bool isPaymentMethod2Selected = false;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 202, 120, 246),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  ),
-                  margin: const EdgeInsets.all(10.0),
-                  child: const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      'Subtotal: \100.000',
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // SubTotal Card
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'SubTotal Harga',
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 202, 120, 246),
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  ),
-                  margin: const EdgeInsets.all(1.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: DropdownButton<String>(
-                      items: <String>[
-                        'Voucher 1',
-                        'Voucher 2',
-                        'Voucher 3',
-                      ].map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String) {
-                        // Implementasi perubahan nilai dropdown di sini
-                      },
-                      hint: const Text('Voucher'),
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 202, 120, 246),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  ),
-                  margin: const EdgeInsets.all(10.0),
-                  child: const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      'Harga: 50.000',
+                    // Add your subtotal amount here
+                    Text(
+                      'Rp 100.000',
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 16,
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
-            ],
-          ),
-          SizedBox(height: 12),
-          const Text(
-            'Metode Pembayaran:',
-            style: TextStyle(
-              fontSize: 18,
             ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: const Color.fromARGB(255, 202, 120, 246),
-                width: 1.0,
+
+            SizedBox(height: 16),
+
+            // Judul "Metode Pembayaran"
+            Text(
+              'Metode Pembayaran',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
             ),
-            margin: const EdgeInsets.all(10.0),
-            child: CheckboxListTile(
-              title: const Text('Cash melalui kurir'),
-              value: cashViaCourier,
-              onChanged: (bool) {
-                // Implement the logic to handle the checkbox state
-              },
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: const Color.fromARGB(255, 202, 120, 246),
-                width: 1.0,
+
+            SizedBox(height: 16),
+
+            // Box dengan Text dan Checkbox untuk Pembayaran 1
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(8),
               ),
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Cash Melalui Kurir',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Checkbox(
+                    value: isPaymentMethod1Selected,
+                    onChanged: (value) {
+                      setState(() {
+                        isPaymentMethod1Selected = value ?? false;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
-            margin: const EdgeInsets.all(10.0),
-            child: CheckboxListTile(
-              title: const Text('Transfer Bank'),
-              value: transferBank,
-              onChanged: (bool) {
-                // Implement the logic to handle the checkbox state
-              },
+
+            SizedBox(height: 16),
+
+            // Box dengan Text dan Checkbox untuk Pembayaran 2
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Transfer Bank',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Checkbox(
+                    value: isPaymentMethod2Selected,
+                    onChanged: (value) {
+                      setState(() {
+                        isPaymentMethod2Selected = value ?? false;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,72 +1,107 @@
 import 'package:flutter/material.dart';
-import '../layan.dart';
+import '../layan1.dart';
+import '../layan2.dart';
+import '../layan3.dart';
 
 class LayananComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Layanan',
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(255, 98, 97, 97),
-              ),
+          child: Text(
+            'Judul Layanan',
+            style: TextStyle(
+              fontSize: 16.0, // Ukuran judul lebih kecil
+              fontWeight: FontWeight.bold,
+              color: const Color.fromARGB(255, 98, 97, 97),
             ),
           ),
         ),
-        SizedBox(height: 7.0),
+        SizedBox(height: 12.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildServiceIcon(context, Icons.star, 'Premium'),
-            _buildServiceIcon(
-                context, Icons.local_laundry_service, 'Cuci Lipat'),
-            _buildServiceIcon(context, Icons.iron, 'Cuci Setrika'),
-            _buildServiceIcon(context, Icons.opacity, 'Cuci Kering'),
+            LayananIcon(
+              icon: Icons.star,
+              label: 'Premium',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LayananPage()),
+                );
+              },
+            ),
+            LayananIcon(
+              icon: Icons.local_laundry_service,
+              label: 'Cuci Setrika',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LayananPage()),
+                );
+              },
+            ),
+            LayananIcon(
+              icon: Icons.iron,
+              label: 'Setrika',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LayananPage2()),
+                );
+              },
+            ),
+            LayananIcon(
+              icon: Icons.star_border,
+              label: 'Khusus',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LayananPage3()),
+                );
+              },
+            ),
           ],
         ),
       ],
     );
   }
+}
 
-  Widget _buildServiceIcon(
-      BuildContext context, IconData iconData, String label) {
+class LayananIcon extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  LayananIcon({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LayananPage()),
-        );
-      },
+      onTap: onTap,
       child: Column(
         children: [
           Container(
-            width: 50.0,
-            height: 50.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color.fromARGB(255, 103, 179, 255),
+              color: Colors.blue,
             ),
+            padding: EdgeInsets.all(16.0),
             child: Icon(
-              iconData,
+              icon,
               color: Colors.white,
-              size: 30.0,
+              size: 32.0,
             ),
           ),
-          const SizedBox(height: 8.0),
-          Text(
-            label,
-            style: const TextStyle(
-              fontSize: 15.0,
-              color: Color.fromARGB(255, 98, 97, 97),
-            ),
-          ),
+          SizedBox(height: 8.0),
+          Text(label),
         ],
       ),
     );

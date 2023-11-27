@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pra_project/component/harga.dart';
-import 'package:pra_project/component/pelayanan.dart';
+import 'package:pra_project/component/pelayanan2.dart';
 import 'package:pra_project/component/tentang.dart';
 
-class LayananPage extends StatefulWidget {
-  const LayananPage({super.key});
+class LayananPage2 extends StatefulWidget {
+  const LayananPage2({Key? key}) : super(key: key);
 
   @override
-  State<LayananPage> createState() => _LayananPageState();
+  State<LayananPage2> createState() => _LayananPage2State();
 }
 
-class _LayananPageState extends State<LayananPage> {
+class _LayananPage2State extends State<LayananPage2> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -20,7 +20,7 @@ class _LayananPageState extends State<LayananPage> {
           preferredSize:
               Size.fromHeight(212.0), // Sesuaikan tinggi vertikal di sini
           child: AppBar(
-            backgroundColor: Colors.grey,
+            backgroundColor: const Color.fromARGB(255, 234, 234, 234),
             elevation: 0,
             flexibleSpace: Container(
               height: 200.0, // Sesuaikan dengan tinggi vertikal yang diinginkan

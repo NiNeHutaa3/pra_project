@@ -108,7 +108,7 @@ class ProfileTab extends StatelessWidget {
 
           ListTile(
             leading: const Icon(Icons.feedback), // Icon umpan balik
-            title: const Text('Umpan Balik'), // Teks menu umpan balik
+            title: const Text('Evaluasi'), // Teks menu umpan balik
             trailing: PopupMenuButton<String>(
               icon: const Icon(Icons.arrow_drop_down), // Icon dropdown
               onSelected: (String value) {
@@ -121,11 +121,11 @@ class ProfileTab extends StatelessWidget {
               itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                 const PopupMenuItem<String>(
                   value: 'kirim',
-                  child: Text('Ajukan Umpan Balik'),
+                  child: Text('Ajukan Evaluasi'),
                 ),
                 const PopupMenuItem<String>(
                   value: 'lihat',
-                  child: Text('Lihat Pengajuan'),
+                  child: Text('Lihat Evaluasi'),
                 ),
               ],
             ),

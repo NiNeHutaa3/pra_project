@@ -51,52 +51,111 @@ class ProsesPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('Images/ls_confirm 1.png'),
+              Card(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('Images/ls_confirm 1.png'),
+                    ],
+                  ),
+                ),
+              ),
               Container(
-                width: 40,
+                width: 30,
                 height: 2,
                 color: Colors.blue,
               ),
               Card(
-                child: Column(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(),
-                          ),
-                        );
-                      },
-                      child: Image.asset('Images/ls_pickup 1.png'),
-                    ),
-                    Container(
-                      width: 40,
-                      height: 2,
-                      color: Colors.blue,
-                    ),
-                  ],
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('Images/ls_pickup 1.png'),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                width: 40,
+                width: 30,
                 height: 2,
                 color: Colors.blue,
               ),
-              Image.asset('Images/ls_in_progress 1.png'),
+              Card(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('Images/ls_in_progress 1.png'),
+                    ],
+                  ),
+                ),
+              ),
               Container(
-                width: 40,
+                width: 30,
                 height: 2,
                 color: Colors.blue,
               ),
-              Image.asset('Images/Frame 228.png'),
+              Card(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('Images/Frame 228.png'),
+                    ],
+                  ),
+                ),
+              ),
               Container(
-                width: 40,
+                width: 30,
                 height: 2,
                 color: Colors.blue,
               ),
-              Image.asset('Images/Frame 229.png'),
+              Card(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('Images/Frame 229.png'),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ],

@@ -83,9 +83,7 @@ class _StatusTabState extends State<StatusTab> {
                 child: _selectedTabIndex == 0
                     ? ProsesPage()
                     : _selectedTabIndex == 1
-                        ? PembayaranPage(
-                            cashViaCourier: cashViaCourier,
-                            transferBank: transferBank)
+                        ? PembayaranPage()
                         : SelesaiPage()),
           ),
         ],

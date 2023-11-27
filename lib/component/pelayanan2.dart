@@ -103,22 +103,6 @@ class _ServiceComponentState extends State<ServiceComponent> {
               },
             ),
             SizedBox(height: 16),
-            DropdownButtonFormField<String>(
-              decoration: InputDecoration(
-                labelText: 'Jenis Detergen',
-                border: OutlineInputBorder(),
-              ),
-              items: ['Cair', 'Bubuk'].map((String detergent) {
-                return DropdownMenuItem<String>(
-                  value: detergent,
-                  child: Text(detergent),
-                );
-              }).toList(),
-              onChanged: (String) {
-                // Handle value change
-              },
-            ),
-            SizedBox(height: 16),
             TextFormField(
               maxLines: 3,
               decoration: InputDecoration(

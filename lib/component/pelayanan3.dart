@@ -89,10 +89,11 @@ class _ServiceComponentState extends State<ServiceComponent> {
             SizedBox(height: 16),
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
-                labelText: 'Metode',
+                labelText: 'Pilihan',
                 border: OutlineInputBorder(),
               ),
-              items: ['Express', 'Non Express'].map((String method) {
+              items:
+                  ['Selimut & Seprai', 'Karpet', 'Boneka'].map((String method) {
                 return DropdownMenuItem<String>(
                   value: method,
                   child: Text(method),
